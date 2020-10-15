@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{fragments/dashboard-layout}"
+	> 
+<head>
+	<title>AA - Metrics - Test Run Results</title>
+</head>
+<body>
+	<div layout:fragment="content" >
+      <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">
+          <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+                <li class="breadcrumb-item"><a href="#">Metrics</a></li>
+                <li class="breadcrumb-item"><a href="#">Test Executions</a></li>
+                <li class="breadcrumb-item"><a href="#">20B Patch Testing</a></li>
+                <li class="breadcrumb-item"><a href="#">List View</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Test Results</li>
+              </ol>
+            </nav>
+            <h4 class="mg-b-0 tx-spacing--1">20B Patch Testing Results</h4>
+          </div>
+          <div class="d-none d-md-block">   			
+          </div>
+        </div>
+
+        <div class="row row-xs">        	        
+          <div class="col-lg-12 mg-b-10">         
+            <div class="card mg-b-10">
+              <div class="card-header pd-t-20 d-sm-flex align-items-start justify-content-between bd-b-0 pd-b-0">
+                <div>
+                  
+                  <p class="tx-13 tx-color-03 mg-b-0">List View | <a th:href="@{/p/1/te/test-results/2/details}">Detailed View</a> | <a th:href="@{/p/1/te/test-results}">Test Execution Metrics</a></p>
+                </div>
+				
+              </div><!-- card-header -->
+              <br/>	
+              <!--<div class="card-body pd-y-30">              	
+              </div>--><!-- card-body -->
+              <div class="table-responsive">
+                <table class="table table-dashboard mg-b-0">
+                  <thead>
+                    <tr>
+                    	
+                      <th>Module</th>
+                      <th>Test Title</th>
+                      <th >Status</th>
+                      <th >Assigned to</th>
+                      <th >Evidences</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="tx-normal">Account Payables</td>
+                      <td class="tx-normal ">Create and Verify PO Matched Invoice as Validated</td>
+                      <td class="tx-normal"><span class="badge badge-success">Passed</span></td>
+                      <td class="tx-normal">BOT</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Account Payables</td>
+                      <td class="tx-normal ">Create and Verify Credit Memo</td>
+                      <td class="tx-normal"><span class="badge badge-warning">Not Run</span></td>
+                      <td class="tx-normal">BOT</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Account Payables</td>
+                      <td class="tx-normal ">Create and Verify Debit Memo</td>
+                      <td class="tx-normal"><span class="badge badge-danger">Failed</span></td>
+                      <td class="tx-normal">BOT</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Account Receivables</td>
+                      <td class="tx-normal ">Verify if goods can be received</td>
+                      <td class="tx-normal"><span class="badge badge-success">Passed</span></td>
+                      <td class="tx-normal">BOT</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>                    
+                    <tr>
+                      <td class="tx-normal">Account Receivables</td>
+                      <td class="tx-normal ">Verify Payment of Receipt</td>
+                      <td class="tx-normal"><span class="badge badge-success">Passed</span></td>
+                      <td class="tx-normal">Raj</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Purchasing</td>
+                      <td class="tx-normal ">Verify Creation of Standard Purchase Order</td>
+                      <td class="tx-normal"><span class="badge badge-success">Passed</span></td>
+                      <td class="tx-normal">Mahesh</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>   
+                    <tr>
+                      <td class="tx-normal">Purchasing</td>
+                      <td class="tx-normal ">Verify Creation of Blanket Purchase Agreement</td>
+                      <td class="tx-normal"><span class="badge badge-success">Passed</span></td>
+                      <td class="tx-normal">BOT</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Inventory</td>
+                      <td class="tx-normal ">Verify Item On Hand Quantity</td>
+                      <td class="tx-normal"><span class="badge badge-success">Passed</span></td>
+                      <td class="tx-normal">Ziya</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>   
+                    <tr>
+                      <td class="tx-normal">Global HR</td>
+                      <td class="tx-normal ">Verify New Employee Hire</td>
+                      <td class="tx-normal"><span class="badge badge-success">Passed</span></td>
+                      <td class="tx-normal">Supriya</td>
+                      <td class="tx-medium tx-left"><i class='fa fa-file-word' aria-hidden="true"></i> <i class='fa fa-play' aria-hidden="true"></i></td>
+                    </tr>                     
+                  </tbody>
+                </table>
+              </div><!-- table-responsive -->
+            </div><!-- card -->
+          </div><!-- col -->
+             
+        </div><!-- row -->
+      </div><!-- container -->	  
+	</div>
+	
+	<th:block layout:fragment="script">
+        <script src="../../assets/js/dashboard-one.js" th:src="@{/assets/js/dashboard-one.js}"></script>
+     </th:block>
+</body>
+</html>

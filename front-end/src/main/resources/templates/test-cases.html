@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{fragments/app-layout}"
+	> 
+<head>
+	<title>AA - Test Cases</title>
+</head>
+<body>
+	<th:block layout:fragment="css">
+        <link href="../../lib/prismjs/themes/prism-vs.css" th:href="@{/lib/prismjs/themes/prism-vs.css}" rel="stylesheet">
+    	<link href="../../lib/datatables.net-dt/css/jquery.dataTables.min.css" th:href="@{/lib/datatables.net-dt/css/jquery.dataTables.min.css}" rel="stylesheet">
+    	<link href="../../lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" th:href="@{/lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css}" rel="stylesheet">
+    	<link href="../../lib/select2/css/select2.min.css" th:href="@{/lib/select2/css/select2.min.css}" rel="stylesheet">        
+     </th:block>
+	<div layout:fragment="content" >
+		
+
+		
+        <h4 id="section2" class="mg-b-10">Test Cases</h4>
+        <div class="row row-sm d-flex justify-content-between">
+		    <div class='col-lg-6'>
+		      <div class="row row-sm">
+				  <div class='col-lg-4 mg-b-10'>	
+			       	<select class="custom-select">
+			          <option selected>Select existing filter </option>
+			          <option value="1">Module</option>
+			          <option value="2">Status</option>
+			          <option value="3">Keywords</option>
+			          <option value="4">Assigned To</option>
+			          <option value="5">Title</option>
+			          <option value="6">Last Run</option>
+			          <option value="7">Version</option>
+			          <option value="8">Author</option>
+			          <option value="9">Priority</option>
+			          
+			        </select>
+			     </div> 		
+			     <div class='col-lg-4 mg-b-10'>				
+			     	<button type="button" class="btn btn-primary mg-b-10">Select Columns</button>
+			     </div>
+		     </div>
+			</div>			     
+	        <div class='col-lg-6 mg-b-10 tx-right'>
+	       		<a class="btn btn-primary mg-b-10" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Add New Filter</a>
+	       		<a class="btn btn-primary mg-b-10"  th:href="@{/p/1/tcs/add-new-testcase}" role="button" >Add New Test Case</a>
+	       		<button type="button" class="btn btn-primary mg-b-10">Import</button>
+	       		<button type="button" class="btn btn-primary mg-b-10">Export</button> 
+	       		<button type="button" class="btn btn-primary mg-b-10">Delete</button>
+	       		<button type="button" class="btn btn-primary mg-b-10">Batch Edit</button>    
+		    </div>    
+
+        </div>
+		<div class="collapse mg-t-5" id="collapseExample">
+			<div class="card mg-b-10">
+				<div class="card-body">
+					<div class="row row-sm">
+			            <div class="col-sm-2 mg-t-10 mg-sm-t-0">
+			            	<input type="text" class="form-control" placeholder="Filter Name">
+			            </div>
+			            <div class='col-lg-6  mg-t-10 mg-sm-t-0'>
+							<button type="button" class="btn btn-primary">Select Columns</button>						
+							<button type="button" class="btn btn-primary">Save Filter</button>
+							<button type="button" class="btn btn-primary">Cancel</button>
+						</div>
+			        </div>
+			        <div class="row row-sm mg-t-10">	
+			            <div class="col-sm-4 mg-t-10 mg-sm-t-0">
+			            	<select class="custom-select">
+				              <option selected>Selection Criteria</option>
+				              <option value="1">Assigned To</option>				              
+				              <option value="2">Author</option>		
+				              <option value="3">Keywords</option>
+				              <option value="4">Last Run</option>
+				              <option value="5">Module</option>
+				              <option value="6">Priority</option>
+				              <option value="7">Status</option>
+				              <option value="8">Test Case Type</option>
+				              <option value="9">Title</option>				              
+				              <option value="10">Version</option>
+				            </select>
+			            </div>
+			            <div class="col-sm-2 mg-t-10 mg-sm-t-0">
+							<select class="custom-select">
+				              <option selected>Condition</option>
+				              <option value="1">is</option>
+				              <option value="2">is not</option>
+				              <option value="3">is empty</option>
+				              <option value="4">contains</option>
+				              <option value="5">begins with</option>
+				              <option value="6">ends with</option>
+				            </select>
+			            </div>
+			            
+			            <div class="col-sm-5 mg-t-10 mg-sm-t-0">
+			            	<input type="text" class="form-control" placeholder="">
+			            </div>
+ 						<div class='col-lg-1 tx-right mg-t-10 mg-sm-t-0'>
+							<button type="button" class="btn btn-primary">Add Criteria</button>
+						</div>	
+		          </div><!-- row -->	
+		          
+		        </div>  	  	
+	        </div>
+		</div>        
+        <!-- <div data-label="" class="df-example demo-table"> -->
+          <table id="example2" class="table" style="width=100%;">
+            <thead>
+              <tr>
+                <th class="wd-5p tx-center"><input type="checkbox" /></th>
+                <th class="wd-5p">TC ID</th>
+                <th class="wd-15p">Module</th>
+                <th class="wd-30p">Test Title</th>
+                <th class="wd-10p">Status</th>
+                <th class="wd-10p">Assigned To</th>
+                <th class="wd-10p">Last Modified</th>
+                <th class="wd-5p">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+              	<td></td>
+                <td>TC_01</td>
+                <td>Core HR</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>$320,800</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_02</td>
+                <td>Core HR</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>$170,750</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>              
+                <td>TC_03</td>
+                <td>Core HR</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>$86,000</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>            
+                <td>TC_04</td>
+                <td>Account Receivables</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>$433,060</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>              
+                <td>TC_05</td>
+                <td>Account Receivables</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>$162,700</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_06</td>
+                <td>Account Receivables</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>$372,000</td>
+                <td></td>
+              </tr>
+              <tr>
+
+              	<td></td>
+                <td>TC_07</td>
+                <td>Account Receivables</td>
+                <td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>$137,500</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_048</td>
+                <td>Account Payables</td>
+                <td>Integration Specialist</td>
+                <td>Tokyo</td>
+                <td>55</td>
+                <td>$327,900</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_09</td>
+                <td>Account Payables</td>
+                <td>Javascript Developer</td>
+                <td>San Francisco</td>
+                <td>39</td>
+                <td>$205,500</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_10</td>
+                <td>Account Payables</td>
+                <td>Software Engineer</td>
+                <td>Edinburgh</td>
+                <td>23</td>
+                <td>$103,600</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_11</td>
+                <td>Account Payables</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>30</td>
+                <td>$90,560</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_12</td>
+                <td>Account Payables</td>
+                <td>Support Lead</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>$342,000</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_13</td>
+                <td>Account Payables</td>
+                <td>Regional Director</td>
+                <td>San Francisco</td>
+                <td>36</td>
+                <td>$470,600</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_14</td>
+                <td>Account Payables</td>
+                <td>Senior Marketing Designer</td>
+                <td>London</td>
+                <td>43</td>
+                <td>$313,500</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_15</td>
+                <td>Account Payables</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>19</td>
+                <td>$385,750</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_16</td>
+                <td>Account Payables</td>
+                <td>Marketing Designer</td>
+                <td>London</td>
+                <td>66</td>
+                <td>$198,500</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_17</td>
+                <td>Account Payables</td>
+                <td>Chief Financial Officer (CFO)</td>
+                <td>New York</td>
+                <td>64</td>
+                <td>$725,000</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_18</td>
+                <td>Account Payables</td>
+                <td>Systems Administrator</td>
+                <td>New York</td>
+                <td>59</td>
+                <td>$237,500</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_19</td>
+                <td>Account Payables</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>41</td>
+                <td>$132,000</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_20</td>
+                <td>Account Payables</td>
+                <td>Personnel Lead</td>
+                <td>Edinburgh</td>
+                <td>35</td>
+                <td>$217,500</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_21</td>
+                <td>Account Payables</td>
+                <td>Development Lead</td>
+                <td>New York</td>
+                <td>30</td>
+                <td>$345,000</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_22</td>
+                <td>Purchasing</td>
+                <td>Chief Marketing Officer (CMO)</td>
+                <td>New York</td>
+                <td>40</td>
+                <td>$675,000</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_23</td>
+                <td>Purchasing</td>
+                <td>Pre-Sales Support</td>
+                <td>New York</td>
+                <td>21</td>
+                <td>$106,450</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_24</td>
+                <td>Purchasing</td>
+                <td>Sales Assistant</td>
+                <td>Sidney</td>
+                <td>23</td>
+                <td>$85,600</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_25</td>
+                <td>Purchasing</td>
+                <td>Chief Executive Officer (CEO)</td>
+                <td>London</td>
+                <td>47</td>
+                <td>$1,200,000</td>
+                <td></td>
+              </tr>
+              <tr>
+              	<td></td>
+                <td>TC_26</td>
+                <td>Purchasing</td>
+                <td>Developer</td>
+                <td>Edinburgh</td>
+                <td>42</td>
+                <td>$92,575</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        <!-- </div>--><!-- df-example -->
+      </div> 
+      
+      	<th:block layout:fragment="script">
+           	<script src="../../lib/prismjs/prism.js" th:src="@{/lib/prismjs/prism.js}" ></script>
+		    <script src="../../lib/datatables.net/js/jquery.dataTables.min.js" th:src="@{/lib/datatables.net/js/jquery.dataTables.min.js}"></script>
+		    <script src="../../lib/datatables.net-dt/js/dataTables.dataTables.min.js" th:src="@{/lib/datatables.net-dt/js/dataTables.dataTables.min.js}"   ></script>
+		    <script src="../../lib/datatables.net-responsive/js/dataTables.responsive.min.js" th:src="@{/lib/datatables.net-responsive/js/dataTables.responsive.min.js}" ></script>
+		    <script src="../../lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js" th:src="@{/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js}"></script>
+		    <script src="../../lib/select2/js/select2.min.js" th:src="@{/lib/select2/js/select2.min.js}"  ></script>
+		    <script>
+		      $(function(){
+        		'use strict'
+		    
+			    $('#example2').DataTable(
+			    {
+	          		responsive: true,
+
+	          		pageLength:25,
+	         		language: {
+	            				searchPlaceholder: 'Search...',
+	            				sSearch: '',
+	            				lengthMenu: '_MENU_ tcs / page'
+	          				  }
+	        	});
+        		
+			    $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+        		
+		      });
+		    </script>
+     	</th:block>
+</body>
+</html>

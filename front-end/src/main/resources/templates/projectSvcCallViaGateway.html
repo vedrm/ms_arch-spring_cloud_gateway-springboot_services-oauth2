@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/dashboard-layout}">
+<head>
+<title>AA - Project MS call via Gateway MS</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+			<div
+				class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">
+				<div>
+					You are successfully logged in <span style="font-weight: bold"
+						th:text="${userName}"></span> via the OAuth 2.0 Client <span
+						style="font-weight: bold" th:text="${clientName}"></span>
+				</div>
+			</div>
+
+		</div>
+		<!-- container -->
+	</div>
+
+	<th:block layout:fragment="script">
+		<script src="../../assets/js/dashboard-one.js"
+			th:src="@{/assets/js/dashboard-one.js}"></script>
+	</th:block>
+</body>
+</html>

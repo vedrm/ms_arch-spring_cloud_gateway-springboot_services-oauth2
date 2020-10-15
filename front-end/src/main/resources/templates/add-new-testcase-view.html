@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{fragments/app-layout}"
+	> 
+<head>
+	<title>AA - Test Case</title>
+</head>
+<body>
+	<th:block layout:fragment="css">
+        <link href="../../lib/prismjs/themes/prism-vs.css" th:href="@{/lib/prismjs/themes/prism-vs.css}" rel="stylesheet">
+    	<link href="../../lib/datatables.net-dt/css/jquery.dataTables.min.css" th:href="@{/lib/datatables.net-dt/css/jquery.dataTables.min.css}" rel="stylesheet">
+    	<link href="../../lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" th:href="@{/lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css}" rel="stylesheet">
+    	<link href="../../lib/select2/css/select2.min.css" th:href="@{/lib/select2/css/select2.min.css}" rel="stylesheet">
+    	<link href="../../lib/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" th:href="@{/../lib/bootstrap-tagsinput/bootstrap-tagsinput.css}">        
+     </th:block>
+	<div layout:fragment="content" >
+	    <h4 id="section2" class="mg-b-10">Enter/Update test case details</h4>   
+			<form>
+			
+			  <div class="form-group row">
+			    <label for="tc-title" class="col-sm-2 col-form-label">Test case title</label>
+			    <div class="col-sm-6">
+			      <input type="text" class="form-control" id="tc-title" placeholder="Title of your test case">
+			    </div>
+			  </div>	
+			  
+			<div class='row'>
+				<div class='col-md-8'>
+				  <div class="form-row">
+				    <div class="form-group col-md-12">
+				      <label>Test Steps</label>
+					  <textarea class="form-control" rows="4" placeholder="Write your test steps in detail"></textarea>
+				    </div>
+				  </div>					
+				  <div class="form-row">
+				    <div class="form-group col-md-4">
+				      <label>Application Details</label>
+				      <select class="custom-select">
+				        <option>Select Application</option>
+				      </select>
+				    </div>
+				    <div class="form-group col-md-4 d-flex align-items-end">
+				      <select class="custom-select">
+				        <option>Select Module</option>
+				      </select>
+				    </div>
+				    <div class="form-group col-md-4 d-flex align-items-end">
+				      <select class="custom-select">
+				        <option>Select Sub Module</option>
+				      </select>
+				    </div>
+				  </div>
+				  <div class="form-row">
+				    <div class="form-group col-md-4">
+				      <label>Test case Type</label>
+				      <select class="custom-select">
+				      	<option>Select Type</option>
+				        <option>Manual</option>
+				        <option>Automation</option>
+				      </select>
+				    </div>
+				    <div class="form-group col-md-8 ">
+				      <label for="tc-tags">Tags</label>
+				      <input type="text" class="form-control" id="tc-tags" placeholder=""  />
+				    </div>
+				  </div>
+				  <div class="form-row">
+				    <div class="form-group col-md-4">
+				      <label>Automation Status</label>
+				      <select class="custom-select">
+				        <option>Select Automation Status</option>
+				      </select>
+				    </div>
+				    <div class="form-group col-md-4">
+				      <label>Automation Assigned To</label>
+				      <select class="custom-select">
+				        <option>Select Assigned To</option>
+				      </select>
+				    </div>
+				    <div class="form-group input-group col-md-4 d-flex align-items-end ">				     
+				      <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+					  <div class="input-group-append">					  	
+    					<span class="input-group-text" id="basic-addon2"> Efforts ( Hrs / Pts )</span>
+  					  </div>
+				    </div>
+				  </div>
+				
+				</div>
+				<div class='col-md-4'></div>
+			</div>  		
+  			  <button class="btn btn-primary" type="submit">Save Changes</button>
+			  <button class="btn btn-secondary" type="cancel">Cancel</button>
+			</form>
+    </div> 
+      
+      	<th:block layout:fragment="script">
+           	<script src="../../lib/prismjs/prism.js" th:src="@{/lib/prismjs/prism.js}" ></script>
+		    <script src="../../lib/datatables.net/js/jquery.dataTables.min.js" th:src="@{/lib/datatables.net/js/jquery.dataTables.min.js}"></script>
+		    <script src="../../lib/datatables.net-dt/js/dataTables.dataTables.min.js" th:src="@{/lib/datatables.net-dt/js/dataTables.dataTables.min.js}"   ></script>
+		    <script src="../../lib/datatables.net-responsive/js/dataTables.responsive.min.js" th:src="@{/lib/datatables.net-responsive/js/dataTables.responsive.min.js}" ></script>
+		    <script src="../../lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js" th:src="@{/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js}"></script>
+		    <script src="../../lib/select2/js/select2.min.js" th:src="@{/lib/select2/js/select2.min.js}"  ></script>
+    		<script src="../../lib/bootstrap-tagsinput/bootstrap-tagsinput.min.js" th:src="@{/lib/bootstrap-tagsinput/bootstrap-tagsinput.min.js}"></script>
+    		<script src="../../lib/typeahead.js/typeahead.bundle.min.js" th:src="@{/lib/typeahead.js/typeahead.bundle.min.js}"></script>
+<script>
+      $(function(){
+        'use strict'
+        var data = '[{"name":"Complex"},{"name":"Moderate"}]';
+        var sampleTags = new Bloodhound({
+          datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          local: jQuery.parseJSON(data)
+          
+        });
+
+        sampleTags.initialize();
+        
+        $('#tc-tags').tagsinput({
+          typeaheadjs: {
+            name: 'name',
+            displayKey: 'name',
+            valueKey: 'name',
+            source: sampleTags.ttAdapter()
+          }
+        });
+      });
+    </script>    				    
+     	</th:block>
+</body>
+</html>

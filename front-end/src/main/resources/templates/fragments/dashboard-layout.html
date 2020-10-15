@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+  >
+	<head>        
+	    <!-- Favicon -->
+	    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/ACT-Logo-45-30.png" th:href="@{/assets/img/ACT-Logo-45-30.png}" />
+	
+	    <!-- vendor css -->
+	    <link href="../../lib/@fortawesome/fontawesome-free/css/all.min.css" th:href="@{/lib/@fortawesome/fontawesome-free/css/all.min.css}" rel="stylesheet" />
+	    <link href="../../lib/ionicons/css/ionicons.min.css" rel="stylesheet" th:href="@{/lib/ionicons/css/ionicons.min.css}" />
+	    <link href="../../lib/jqvmap/jqvmap.min.css" rel="stylesheet" th:href="@{/lib/jqvmap/jqvmap.min.css}" />
+	
+	    <!-- DashForge CSS -->
+	    <link rel="stylesheet" href="../../assets/css/dashforge.css" th:href="@{/assets/css/dashforge.css}" />
+	    <link rel="stylesheet" href="../../assets/css/dashforge.dashboard.css" th:href="@{/assets/css/dashforge.dashboard.css}" />
+            
+	</head>
+	<body class="page-profile">
+		<header  th:replace="fragments/header::header">
+		</header>
+		
+		<div class="content content-fixed" layout:fragment="content">
+		</div>
+		
+		<footer th:replace="fragments/footer::footer"></footer>
+		
+		
+	    <script src="../../lib/jquery/jquery.min.js" th:src="@{/lib/jquery/jquery.min.js}"></script>
+	    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	    <script src="../../lib/feather-icons/feather.min.js" th:src="@{/lib/feather-icons/feather.min.js}"></script>
+	    <script src="../../lib/perfect-scrollbar/perfect-scrollbar.min.js" th:src="@{/lib/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+	    <script src="../../lib/jquery.flot/jquery.flot.js" th:src="@{/lib/jquery.flot/jquery.flot.js}"></script>
+	    <script src="../../lib/jquery.flot/jquery.flot.stack.js" th:src="@{/lib/jquery.flot/jquery.flot.stack.js}"></script>
+	    <script src="../../lib/jquery.flot/jquery.flot.resize.js" th:src="@{/lib/jquery.flot/jquery.flot.resize.js}"></script>
+	    <script src="../../lib/flot.curvedlines/curvedLines.js" th:src="@{/lib/flot.curvedlines/curvedLines.js}"></script>
+	    <script src="../../lib/peity/jquery.peity.min.js" th:src="@{/lib/peity/jquery.peity.min.js}"></script>
+	    
+	    <script src="../../lib/chart.js/Chart.bundle.min.js" th:src="@{/lib/chart.js/Chart.bundle.min.js}"></script>
+	    <script src="../../lib/jqvmap/jquery.vmap.min.js" th:src="@{/lib/jqvmap/jquery.vmap.min.js}"></script>
+	    <script src="../../lib/jqvmap/maps/jquery.vmap.usa.js" th:src="@{/lib/jqvmap/maps/jquery.vmap.usa.js}"></script>
+	
+	    <script src="../../assets/js/dashforge.js" th:src="@{/assets/js/dashforge.js}"></script>
+	    <script src="../../assets/js/dashforge.sampledata.js" th:src="@{/assets/js/dashforge.sampledata.js}"></script>
+		<th:block layout:fragment="script"></th:block>		
+	    <!-- append theme customizer -->
+	    <script src="../../lib/js-cookie/js.cookie.js" th:src="@{/lib/js-cookie/js.cookie.js}"></script>
+	    <script src="../../assets/js/dashforge.settings.js" th:src="@{/assets/js/dashforge.settings.js}"></script>
+				
+	</body>
+</html>

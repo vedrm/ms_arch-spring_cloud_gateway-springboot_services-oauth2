@@ -1,0 +1,41 @@
+server:
+  port: 8091
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+#    org.springframework.boot.autoconfigure: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8090/uaa/token_keys
+          
+      client:
+        registration:
+          client-actplt-project:
+            provider: uaa
+            client-id: client-actplt-project
+            client-secret: secret
+            redirect-uri: "{baseUrl}/localhost/api/ast/projects"
+            scope: authority-actplt-project,resource.read
+      
+        provider:
+          uaa:
+            issuer-uri: http://localhost:8090/uaa/oauth/token
+
+oauth2:
+  resource:
+    services:
+      service-a:
+        uri: http://localhost:9000/service-a
+      service-b:
+        uri: http://localhost:9001/service-b

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{fragments/app-layout}"
+	> 
+<head>
+	<title>AA - Blank Page</title>
+</head>
+<body>
+	<th:block layout:fragment="css">
+        <link href="../../lib/prismjs/themes/prism-vs.css" th:href="@{/lib/prismjs/themes/prism-vs.css}" rel="stylesheet">
+    	<link href="../../lib/datatables.net-dt/css/jquery.dataTables.min.css" th:href="@{/lib/datatables.net-dt/css/jquery.dataTables.min.css}" rel="stylesheet">
+    	<link href="../../lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" th:href="@{/lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css}" rel="stylesheet">
+    	<link href="../../lib/select2/css/select2.min.css" th:href="@{/lib/select2/css/select2.min.css}" rel="stylesheet">        
+     </th:block>
+	<div layout:fragment="content" >
+	    <h4 id="section2" class="mg-b-10">Blank Page</h4>   
+
+    </div> 
+      
+      	<th:block layout:fragment="script">
+           	<script src="../../lib/prismjs/prism.js" th:src="@{/lib/prismjs/prism.js}" ></script>
+		    <script src="../../lib/datatables.net/js/jquery.dataTables.min.js" th:src="@{/lib/datatables.net/js/jquery.dataTables.min.js}"></script>
+		    <script src="../../lib/datatables.net-dt/js/dataTables.dataTables.min.js" th:src="@{/lib/datatables.net-dt/js/dataTables.dataTables.min.js}"   ></script>
+		    <script src="../../lib/datatables.net-responsive/js/dataTables.responsive.min.js" th:src="@{/lib/datatables.net-responsive/js/dataTables.responsive.min.js}" ></script>
+		    <script src="../../lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js" th:src="@{/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js}"></script>
+		    <script src="../../lib/select2/js/select2.min.js" th:src="@{/lib/select2/js/select2.min.js}"  ></script>
+     	</th:block>
+</body>
+</html>

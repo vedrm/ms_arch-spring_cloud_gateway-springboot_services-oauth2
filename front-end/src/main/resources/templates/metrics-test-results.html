@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{fragments/dashboard-layout}"
+	> 
+<head>
+	<title>AA - Metrics</title>
+</head>
+<body>
+	<div layout:fragment="content" >
+      <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">
+          <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+                <li class="breadcrumb-item"><a href="#">Metrics</a></li>
+                <li class="breadcrumb-item"><a href="#">Test Executions</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Test Results</li>
+              </ol>
+            </nav>
+            <h4 class="mg-b-0 tx-spacing--1">Welcome to Test Execution Results</h4>
+          </div>
+          <div class="d-none d-md-block">   
+			<select class="custom-select">
+				<option>Select Test Run</option>
+				<option selected>20B Patch Testing</option>
+				<option>20A Patch Testing</option>
+				<option>19D Patch Testing</option>
+			</select>
+          </div>
+        </div>
+
+        <div class="row row-xs">        	        
+          <div class="col-lg-8 mg-b-10">         
+        	
+		                    
+            <div class="card mg-b-10">
+              <div class="card-header pd-t-20 d-sm-flex align-items-start justify-content-between bd-b-0 pd-b-0">
+                <div>
+                  <h6 class="mg-b-5">20B Patch Testing Results</h6>
+                  <p class="tx-13 tx-color-03 mg-b-0"><a  th:href="@{/p/1/te/test-results/2}">List View</a> | <a th:href="@{/p/1/te/test-results/2/details}">Detailed View</a></p>
+                </div>
+
+              </div><!-- card-header -->
+              <div class="card-body pd-y-30">
+                <div class="d-sm-flex">
+                  <div class="media">
+                    <div class="wd-40 wd-md-50 ht-40 ht-md-50 bg-success tx-white mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded op-6">
+                      <i data-feather="bar-chart-2"></i>
+                    </div>
+                    <div class="media-body">
+                      <h6 class="tx-sans tx-uppercase tx-10 tx-spacing-1 tx-color-03 tx-semibold tx-nowrap mg-b-5 mg-md-b-8">Tests Passed</h6>
+                      <h4 class="tx-20 tx-sm-18 tx-md-24 tx-normal tx-rubik mg-b-0">307 <small class='tx-success'>79%</small></h4>
+                    </div>
+                  </div>
+                  <div class="media mg-t-20 mg-sm-t-0 mg-sm-l-15 mg-md-l-40">
+                    <div class="wd-40 wd-md-50 ht-40 ht-md-50 bg-danger tx-white mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded op-5">
+                      <i data-feather="bar-chart-2"></i>
+                    </div>
+                    <div class="media-body">
+                      <h6 class="tx-sans tx-uppercase tx-10 tx-spacing-1 tx-color-03 tx-semibold mg-b-5 mg-md-b-8">Tests Failed</h6>
+                      <h4 class="tx-20 tx-sm-18 tx-md-24 tx-normal tx-rubik mg-b-0">80 <small class='tx-danger'>20%</small></h4>
+                    </div>
+                  </div>
+                  <div class="media mg-t-20 mg-sm-t-0 mg-sm-l-15 mg-md-l-40">
+                    <div class="wd-40 wd-md-50 ht-40 ht-md-50 bg-warning tx-white mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded op-4">
+                      <i data-feather="bar-chart-2"></i>
+                    </div>
+                    <div class="media-body">
+                      <h6 class="tx-sans tx-uppercase tx-10 tx-spacing-1 tx-color-03 tx-semibold mg-b-5 mg-md-b-8">Tests Not Run</h6>
+                      <h4 class="tx-20 tx-sm-18 tx-md-24 tx-normal tx-rubik mg-b-0">4 <small class="tx-warning">01%</small></h4>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- card-body -->
+              <div class="table-responsive">
+                <table class="table table-dashboard mg-b-0">
+                  <thead>
+                    <tr>
+                      <th>Module</th>
+                      <th class="text-right">Total Tests</th>
+                      <th class="text-right">Passed</th>
+                      <th class="text-right">Failed</th>
+                      <th class="text-right">Not Run</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="tx-normal">Account Payables</td>
+                      <td class="tx-medium text-right">55</td>
+                      <td class="text-right tx-success">35 <span class="mg-l-5 tx-10 tx-normal tx-success"> 64%</span></td>
+                      <td class="text-right tx-danger">16 <span class="mg-l-5 tx-10 tx-normal tx-danger"> 29%</span></td>
+                      <td class="tx-medium text-right">4 <span class="mg-l-5 tx-10 tx-normal tx-normal"> 07%</span></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Account Receivables</td>
+                      <td class="tx-medium text-right">105</td>
+                      <td class="text-right tx-success">90 <span class="mg-l-5 tx-10 tx-normal tx-success"> 86%</span></td>
+                      <td class="text-right tx-danger">15 <span class="mg-l-5 tx-10 tx-normal tx-danger"> 14%</span></td>
+                      <td class="tx-medium text-right">0 <span class="mg-l-5 tx-10 tx-normal tx-normal"> 00%</span></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Purchasing</td>
+                      <td class="tx-medium text-right">81</td>
+                      <td class="text-right tx-success">51 <span class="mg-l-5 tx-10 tx-normal tx-success"> 63%</span></td>
+                      <td class="text-right tx-danger">30 <span class="mg-l-5 tx-10 tx-normal tx-danger"> 37%</span></td>
+                      <td class="tx-medium text-right">0 <span class="mg-l-5 tx-10 tx-normal tx-normal"> 00%</span></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Core HR</td>
+                      <td class="tx-medium text-right">30</td>
+                      <td class="text-right tx-success">29 <span class="mg-l-5 tx-10 tx-normal tx-success"> 97%</span></td>
+                      <td class="text-right tx-danger">1<span class="mg-l-5 tx-10 tx-normal tx-danger"> 03%</span></td>
+                      <td class="tx-medium text-right">0 <span class="mg-l-5 tx-10 tx-normal tx-normal"> 00%</span></td>
+                    </tr>
+                    <tr>
+                      <td class="tx-normal">Payroll</td>
+                      <td class="tx-medium text-right">120</td>
+                      <td class="text-right tx-success">102 <span class="mg-l-5 tx-10 tx-normal tx-success"> 98%</span></td>
+                      <td class="text-right tx-danger">18 <span class="mg-l-5 tx-10 tx-normal tx-danger"> 02%</span></td>
+                      <td class="tx-medium text-right">0 <span class="mg-l-5 tx-10 tx-normal tx-normal"> 00%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- table-responsive -->
+            </div><!-- card -->
+          </div><!-- col -->
+          <div class="col-lg-4 mg-b-10">
+          	<div class="card mg-b-10">
+              <div class="card-body pd-y-20 pd-x-25">
+                <div class="row row-sm">
+                  <div class="col-7">
+                    <h3 class="tx-normal tx-rubik tx-spacing--1 mg-b-5">391</h3>
+                    <h6 class="tx-12 tx-semibold tx-uppercase tx-spacing-1 tx-success mg-b-5">Test Cases Scoped</h6>
+                    <p class="tx-11 tx-color-03 mg-b-0">Triggered across different modules as part of 20B Patch Testing.</p>
+                  </div>
+                  <div class="col-5">
+                    <div class="chart-ten">
+                      <div id="flotChart3" class="flot-chart"></div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- card-body -->
+            </div><!-- card -->          	
+            <div class="card mg-b-10">
+              <div class="card-header pd-t-20 pd-b-0 bd-b-0 d-flex justify-content-between">
+                <h6 class="lh-5 mg-b-0">Open Defects</h6>
+               
+              </div><!-- card-header -->
+              <div class="card-body pd-0 pos-relative">
+                <div class="pos-absolute t-10 l-20 z-index-10">
+                  <div class="d-flex align-items-baseline">
+                    <h1 class="tx-normal tx-rubik mg-b-0 mg-r-5">0</h1>
+                    <!--<p class="tx-11 tx-color-03 mg-b-0"><span class="tx-medium tx-success">0.3% <i class="icon ion-md-arrow-down"></i></span> than last month</p> -->
+                  </div>
+                  <p class="tx-12 tx-color-03 wd-60p">The total number of defects that are still open.</p>
+                </div>
+
+                <div class="chart-sixteen">
+                  <div id="flotChart7" class="flot-chart"></div>
+                </div>
+              </div><!-- card-body -->
+            </div><!-- card -->          	
+            
+          </div>    
+        </div><!-- row -->
+      </div><!-- container -->	  
+	</div>
+	
+	<th:block layout:fragment="script">
+        <script src="../../assets/js/dashboard-one.js" th:src="@{/assets/js/dashboard-one.js}"></script>
+     </th:block>
+</body>
+</html>
