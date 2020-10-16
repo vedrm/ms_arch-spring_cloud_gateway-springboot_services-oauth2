@@ -3,7 +3,6 @@ package com.sample.portal.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class NavController 
@@ -87,7 +86,7 @@ public class NavController
 //		ProjectsResponse pr = this.webClient
 //				.get()
 //				.uri( UriComponentsBuilder.fromUriString( "http://localhost:8080/api/ast/projects" ).build().toUri() )
-//				.attributes( ServletOAuth2AuthorizedClientExchangeFilterFunction.oauth2AuthorizedClient( authorizedClient ) )
+//				.attributes( ServletOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId( "client-actplt-project" ) )
 //				.retrieve()
 //				.bodyToMono(ProjectsResponse.class)
 //				.block();
@@ -101,7 +100,7 @@ public class NavController
 //				.bodyToMono(ProjectsResponse.class);
 //		*/
 //		
-//		ProjectsResponse x = restTemplate.getForObject( "http://localhost:8080/api/ast/projects", ProjectsResponse.class );
+//		//ProjectsResponse x = restTemplate.getForObject( "http://localhost:8080/api/ast/projects", ProjectsResponse.class );
 //		
 //		return "projectSvcCallViaGateway";
 //	}

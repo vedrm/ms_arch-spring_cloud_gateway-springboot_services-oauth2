@@ -65,7 +65,7 @@ oauth:
       authorized-grant-types: client_credentials
       scope: authority-actplt-project,resource.read
       authorities: uaa.resource
-      redirect-uri: http://localhost:8091/api/ast/projects
+      redirect-uri: http://localhost:8080/api/ast/projects
 
 scim:
   groups:

@@ -25,17 +25,16 @@ spring:
             provider: uaa
             client-id: client-actplt-project
             client-secret: secret
-            redirect-uri: "{baseUrl}/localhost/api/ast/projects"
             scope: authority-actplt-project,resource.read
       
         provider:
           uaa:
             issuer-uri: http://localhost:8090/uaa/oauth/token
 
-oauth2:
-  resource:
-    services:
-      service-a:
-        uri: http://localhost:9000/service-a
-      service-b:
-        uri: http://localhost:9001/service-b
+#oauth2:
+#  resource:
+#    services:
+#      service-a:
+#        uri: http://localhost:9000/service-a
+#      service-b:
+#        uri: http://localhost:9001/service-b
